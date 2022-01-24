@@ -11,7 +11,7 @@ namespace Datamodel
         public string LastName { get; set; }
         public DateTime Birthday { get; set; }
         public GenderEnum Gender { get; set; }
-        public string Employer { get; set; }
+        public string PlaceOfBirth { get; set; }
         public List<Person> Childreen { get; set; }
         public Person Spouse { get; set; }
 
@@ -24,7 +24,7 @@ namespace Datamodel
         private static List<string> _femaleFirstNames;
 
         private static List<string> _lastNames;
-        private static List<string> _employers;
+        private static List<string> _placeOfBirth;
 
         static Person()
         {
@@ -33,7 +33,7 @@ namespace Datamodel
             _maleFirstNames = new List<string>();
             _femaleFirstNames = new List<string>();
             _lastNames = new List<string>();
-            _employers = new List<string>();
+            _placeOfBirth = new List<string>();
 
             _maleFirstNames.AddRange(new[] { "Ben", "Ken", "Michael", "Thomas", "Mike", "John", "Russel", "George", "Arnold" });
             _maleFirstNames.AddRange(new[] { "Bruce", "Steve", "Tom", "Bill", "Ted", "Peter", "David", "Reginald", "David" });
@@ -48,9 +48,10 @@ namespace Datamodel
             _lastNames.AddRange(new[] { "Anderson", "Reeves", "Sagan", "Morgan", "Parker", "Watson" });
             _lastNames.AddRange(new[] { "Simpson", "King", "Abrams", "Suzuki", "Weller", "Summers" });
 
-            _employers.AddRange(new[] { "ACME Inc.", "Big Kahuna", "Virtucon", "Cyberdyne Systems", "Duff Beer" });
-            _employers.AddRange(new[] { "Bubba Gump", "Sterling Cooper", "Hooli", "Rainholm Industries", "Weyland Yutani" });
-            _employers.AddRange(new[] { "Iron Bank of Braavos", "Los Pollos Hermanos", "Yoyodyne Propulsion Systems", "Wolfram & Hart" });
+            _placeOfBirth.AddRange(new[] { "Berlin", "Paris", "Tokyo", "Oslo", "New York", "Denver" , "Anchorage" });
+            _placeOfBirth.AddRange(new[] { "Saitama", "Valencia", "Tunis", "Catania", "Kairo" , "Port Elizabeth" ,"Hiroshima"});
+            _placeOfBirth.AddRange(new[] { "Dallas", "Vancouver", "Brasília", "Minsk", "Heidelberg", "Istanbul", "Dublin" });
+            _placeOfBirth.AddRange(new[] { "Glasgow", "Amsterdam", "Rom", "Sarajevo", "Damaskus", "Dubai", "Colombo" });
 
             _minBirthday = new DateTime(1960, 1, 1);
             _maxBirthday = new DateTime(2020, 12, 31);
@@ -60,13 +61,13 @@ namespace Datamodel
         {
             int genderIndex = _random.Next(Enum.GetNames(typeof(GenderEnum)).Length - 1);
             int lastNameIndex = _random.Next(_lastNames.Count - 1);
-            int employersIndex = _random.Next(_employers.Count - 1);
+            int employersIndex = _random.Next(_placeOfBirth.Count - 1);
 
             Person person = new Person();
             person.Id = Guid.NewGuid();
             person.Gender = (GenderEnum)genderIndex;
             person.LastName = _lastNames[lastNameIndex];
-            person.Employer = _employers[employersIndex];
+            person.PlaceOfBirth = _placeOfBirth[employersIndex];
 
             switch (person.Gender)
             {

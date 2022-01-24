@@ -10,7 +10,7 @@ namespace RandomPersonGenerator
             for (int i = 0; i < 20; i++)
             {
                 Person person = Person.GetRandomPerson();
-                Console.WriteLine($"{person.FirstName} {person.LastName}, born {person.Birthday.ToShortDateString() } works at {person.Employer}");
+                Console.WriteLine($"{person.FirstName} {person.LastName}, born {person.Birthday.ToShortDateString() } in {person.PlaceOfBirth}");
             }
 
             Console.ReadLine();
