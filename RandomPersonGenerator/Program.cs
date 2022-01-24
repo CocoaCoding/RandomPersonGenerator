@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Datamodel;
+using System;
 
 namespace RandomPersonGenerator
 {
@@ -10,6 +7,13 @@ namespace RandomPersonGenerator
     {
         static void Main(string[] args)
         {
+            for (int i = 0; i < 20; i++)
+            {
+                Person person = Person.GetRandomPerson();
+                Console.WriteLine($"{person.FirstName} {person.LastName}, born {person.Birthday.ToShortDateString() } works at {person.Employer}");
+            }
+
+            Console.ReadLine();
         }
     }
 }
