@@ -35,3 +35,5 @@ A TimeInterval is formed from two dates and then a random value is determined fr
 * Added additional names and places of birth
 * Added change for double first name and double last name
 * Added testing for duplicate entries
+* Added subproject "PersonSimpleDatabindingSampleWPF"
+* Added subproject "PersonTreeViewDatabindingSampleWPF"
