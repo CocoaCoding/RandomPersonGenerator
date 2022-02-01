@@ -1,4 +1,4 @@
-# RandomPersonGenerator
+# Random Person Generator
 A Person class for C# with the ability to automatically generate sample data.
 
 #### Introduction
@@ -28,3 +28,10 @@ A TimeInterval is formed from two dates and then a random value is determined fr
 * PlaceOfBirth // string
 * Children // A list of Persons, Kids these days ...
 * Spouse // A Person, the significant other 
+
+#### Updates
+
+##### 2022-02-01
+* Added additional names and places of birth
+* Added change for double first name and double last name
+* Added testing for duplicate entries
