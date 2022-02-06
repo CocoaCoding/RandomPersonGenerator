@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace PersonTreeViewDatabindingSampleWPF
 {
-    /// <summary>
-    /// Interaktionslogik für MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()

@@ -43,14 +43,14 @@ namespace Datamodel
             _maleFirstNames.AddRange(new[] { "Bruce", "Steve", "Tom", "Bill", "Ted", "Peter", "David", "Reginald", "Ronald", "Norman", "Ulrich" });
             _maleFirstNames.AddRange(new[] { "Pete", "Ricky", "Richard", "Paul", "Ian", "Martin", "Noel", "Adam", "Don", "Dan", "Fred" });
             _maleFirstNames.AddRange(new[] { "Jack", "Tobias", "Otto", "Kurt", "Wolfgang", "Andreas", "Josef", "Donald", "Frank", "Steven", "Adrian", "James" });
-            _maleFirstNames.AddRange(new[] { "Eric", "Kenny", "Patrick", "Bret" ,"Isaac","Harald"});
+            _maleFirstNames.AddRange(new[] { "Eric", "Kenny", "Patrick", "Bret" ,"Isaac","Harald","Clark", "Barry"});
 
             _femaleFirstNames.AddRange(new[] { "Rose", "Billie", "Kenzie", "Jane", "Kagney", "May", "Gwen", "Mary" });
             _femaleFirstNames.AddRange(new[] { "Linda", "Tracy", "Lena", "Katrina", "Samantha", "Suzi", "Nina", "Brooke" });
             _femaleFirstNames.AddRange(new[] { "Haruna", "Angelina", "Virginia", "Natasha", "Veronica", "Hana", "Jessica" });
             _femaleFirstNames.AddRange(new[] { "Jill", "Sabrina", "Betty", "Anna", "Ute", "Angelika", "Natalie", "Eve", "Kelly", "Tia" });
             _femaleFirstNames.AddRange(new[] { "Allison", "Carrie", "Ivanka", "Sharon", "Mona", "Lucy", "Anny", "Pia", "Isabella", "Sara" });
-            _femaleFirstNames.AddRange(new[] { "Pamela", "Beverly", "Madison" ,"Carmen", "Nicole","Joy"});
+            _femaleFirstNames.AddRange(new[] { "Pamela", "Beverly", "Madison" ,"Carmen", "Nicole","Joy" ,"Fielding", "Allen" });
 
             _lastNames.AddRange(new[] { "Swift", "Piper", "Steele", "Rogers", "Stark", "Hawkins", "Lee", "Kirby" });
             _lastNames.AddRange(new[] { "Cambell", "Hart", "Jordan", "Fielding", "Crispin", "Ford", "Jones" });
@@ -59,11 +59,12 @@ namespace Datamodel
             _lastNames.AddRange(new[] { "Petty", "Bowie", "Gabriel", "Mueller", "Collins", "Rutherford", "Karter", "Olson", "Hanks" });
             _lastNames.AddRange(new[] { "Bogenhard", "Wayne", "Lane","Newton", "Lesch"});
 
-            _placeOfBirth.AddRange(new[] { "Berlin", "Paris", "Tokyo", "Oslo", "New York", "Denver", "Anchorage" });
+            _placeOfBirth.AddRange(new[] { "Berlin", "Paris", "Tokyo", "Oslo", "New York", "Denver", "Anchorage", "Taipeh" });
             _placeOfBirth.AddRange(new[] { "Saitama", "Valencia", "Tunis", "Catania", "Kairo", "Port Elizabeth", "Hiroshima" });
             _placeOfBirth.AddRange(new[] { "Dallas", "Vancouver", "Brasília", "Minsk", "Heidelberg", "Istanbul", "Dublin" });
             _placeOfBirth.AddRange(new[] { "Glasgow", "Amsterdam", "Rom", "Sarajevo", "Damaskus", "Dubai", "Colombo" });
             _placeOfBirth.AddRange(new[] { "Oberhausen", "Birmingham", "Liverpool", "Lyon", "Ankara", "Seoul", "Honolulu" });
+            _placeOfBirth.AddRange(new[] { "Antwerpen", "Houston", "Milano", "Hannover", "Beirut", "Bagdad", "Athens", "Tehran" });
 
             _minBirthday = new DateTime(1960, 1, 1);
             _maxBirthday = new DateTime(2020, 12, 31);
@@ -98,16 +99,15 @@ namespace Datamodel
 
         public static Person GetRandomPerson()
         {
-            int genderIndex = _random.Next(Enum.GetNames(typeof(GenderEnum)).Length - 1);
-            int lastNameIndex = _random.Next(_lastNames.Count - 1);
-            int employersIndex = _random.Next(_placeOfBirth.Count - 1);
+            int genderIndex = _random.Next(Enum.GetNames(typeof(GenderEnum)).Length);
+            int placeOfBirthIndex = _random.Next(_placeOfBirth.Count - 1);
 
             Person person = new Person();
             person.Id = Guid.NewGuid();
             person.Gender = (GenderEnum)genderIndex;
             person.FirstName = GetRandomFirstName(person.Gender);
             person.LastName = GetRandomLastName();
-            person.PlaceOfBirth = _placeOfBirth[employersIndex];
+            person.PlaceOfBirth = _placeOfBirth[placeOfBirthIndex];
 
             TimeSpan timeSpan = _maxBirthday - _minBirthday;
             TimeSpan newSpan = new TimeSpan(0, _random.Next(0, (int)timeSpan.TotalMinutes), 0);
