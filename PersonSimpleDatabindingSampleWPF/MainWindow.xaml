@@ -6,50 +6,13 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="Person Simple Databinding Sample" Height="550" Width="400">
-    
+
     <Window.Resources>
-        <BitmapImage x:Key="Male" UriSource="Resources/man.png" />
-        <BitmapImage x:Key="Woman" UriSource="Resources/woman.png" />
-        <BitmapImage x:Key="Other" UriSource="Resources/other.png" />
-        <Style TargetType="TextBlock" x:Key="HeaderStyle">
-            <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="FontSize" Value="12pt"/>
-        </Style>
-        <Style TargetType="TextBlock" x:Key="SubHeaderStyle">
-            <Setter Property="Foreground" Value="Gray"/>
-            <Setter Property="FontSize" Value="10pt"/>
-        </Style>
-        <Style TargetType="TextBlock" x:Key="ButtonTextStyle">
-            <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="FontSize" Value="10pt"/>
-            <Setter Property="Margin" Value="4"/>
-        </Style>
-        
-        <Style TargetType="DockPanel" x:Key="ButtonBarStyle">
-            <Setter Property="Background" Value="Gainsboro"/>
-        </Style>
-
-        <Style TargetType="{x:Type Image}" x:Key="GenderImage">
-            <Style.Triggers>
-                <DataTrigger Binding="{Binding Gender}" Value="Male">
-                    <Setter Property="Source" Value="{StaticResource Male}" />
-                    <Setter Property="ToolTip" Value="Male"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding Gender}" Value="Female">
-                    <Setter Property="Source" Value="{StaticResource Woman}" />
-                    <Setter Property="ToolTip" Value="Female"/>
-                </DataTrigger>
-                <DataTrigger Binding="{Binding Gender}" Value="Other">
-                    <Setter Property="Source" Value="{StaticResource Other}" />
-                    <Setter Property="ToolTip" Value="Other"/>
-                </DataTrigger>
-            </Style.Triggers>
-        </Style>
-
-        <Style TargetType="ListBox" x:Key="ListBoxStyle">
-            <Setter Property="BorderThickness"  Value="0"/>
-        </Style>
-        
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Window.Resources>
     
     <Grid>
@@ -59,12 +22,12 @@
         </Grid.RowDefinitions>
 
         <DockPanel Style="{StaticResource ButtonBarStyle}" Grid.Row="0">
-            <Button HorizontalAlignment="Right" Margin="5" Name="AddPersonButton">
+            <Button HorizontalAlignment="Right" Margin="5" Name="AddPersonButton" Command="{Binding AddPersonCommand}">
                 <TextBlock Style="{StaticResource ButtonTextStyle}" Text="Add Person"/>
             </Button>
         </DockPanel>
 
-        <ListBox Style="{StaticResource ListBoxStyle}" ItemsSource="{Binding Path=PersonVMs}" Grid.Row="1">
+        <ListBox Style="{StaticResource ListBoxStyle}" ItemsSource="{Binding Path=PersonVMs}" Grid.Row="1" SelectedItem="{Binding Path=SelectedPersonVM, Mode=TwoWay}">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" Margin="4">
@@ -75,8 +38,13 @@
                         </StackPanel>
                     </StackPanel>
                 </DataTemplate>
-            </ListBox.ItemTemplate>            
-            
+            </ListBox.ItemTemplate>
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Remove Person" Command="{Binding DeletePersonCommand}"/>
+                </ContextMenu>
+            </ListBox.ContextMenu>
+
         </ListBox>        
     </Grid>
 </Window>

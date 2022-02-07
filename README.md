@@ -31,7 +31,11 @@ A TimeInterval is formed from two dates and then a random value is determined fr
 
 #### Updates
 
-##### 2022-02-01
+##### 2022-02-07
+* ListBox Sample added with CommandBindings (Add + Remove)
+* ListBox Sample added Style Dictionary
+
+##### 2022-02-06
 * Bugfix random gender genration
 * ListBox Sample with Datatemplate and ViewModel
 
