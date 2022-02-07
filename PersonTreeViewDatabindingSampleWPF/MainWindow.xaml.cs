@@ -20,6 +20,7 @@ namespace PersonTreeViewDatabindingSampleWPF
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new MainWindowViewModel();
         }
     }
 }

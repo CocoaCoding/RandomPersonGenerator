@@ -13,7 +13,7 @@ namespace Datamodel
         public DateTime Birthday { get; set; }
         public GenderEnum Gender { get; set; }
         public string PlaceOfBirth { get; set; }
-        public List<Person> Childreen { get; set; }
+        public List<Person> Children { get; set; }
         public Person Spouse { get; set; }
 
         private static DateTime _minBirthday;
