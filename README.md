@@ -31,6 +31,10 @@ A TimeInterval is formed from two dates and then a random value is determined fr
 
 #### Updates
 
+##### 2022-03-06
+* CommonResources project added for shared resources
+* ListBox sample project renamed
+
 ##### 2022-02-07
 * ListBox Sample added with CommandBindings (Add + Remove)
 * ListBox Sample added Style Dictionary

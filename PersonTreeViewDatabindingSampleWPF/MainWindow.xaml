@@ -8,11 +8,26 @@
         WindowStartupLocation="CenterScreen"
         Title="Person TreeView Databinding Sample" Height="450" Width="800">
 
+    <!--<Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/PersonSimpleDatabindingSampleWPF;Resources/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>-->
+
+
     <Grid>
         <TreeView ItemsSource="{Binding Path=Children}" >
             <TreeView.ItemTemplate>
                 <HierarchicalDataTemplate DataType="{x:Type local:PersonTreeViewModel}" ItemsSource="{Binding Children}">
+                    
+                    
+                    
+                    
                     <TextBlock Text="{Binding FullName}" />
+                    
+                    
                 </HierarchicalDataTemplate>
             </TreeView.ItemTemplate>
             <TreeView.ItemContainerStyle>

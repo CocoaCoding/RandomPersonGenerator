@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F5363480-C4CF-4428-8524-05DA0220C6E7}</ProjectGuid>
+    <ProjectGuid>{AF765C38-5EF3-417C-90AD-EF36352684DF}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>PersonTreeViewDatabindingSampleWPF</RootNamespace>
-    <AssemblyName>PersonTreeViewDatabindingSampleWPF</AssemblyName>
+    <RootNamespace>PersonSimpleDatabindingSampleWPF</RootNamespace>
+    <AssemblyName>PersonSimpleDatabindingSampleWPF</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -39,6 +39,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -57,6 +58,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="PersonViewModel.cs" />
+    <Compile Include="WPFToolkit\CommandHandler.cs" />
+    <Compile Include="WPFToolkit\ViewModelBase.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -72,7 +76,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainWindowViewModel.cs" />
-    <Compile Include="PersonTreeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -89,6 +92,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -99,9 +103,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PersonListBoxDatabindingSampleWPF\PersonListBoxDatabindingSampleWPF.csproj">
-      <Project>{AF765C38-5EF3-417C-90AD-EF36352684DF}</Project>
-      <Name>PersonListBoxDatabindingSampleWPF</Name>
+    <ProjectReference Include="..\CommonResources\CommonResources.csproj">
+      <Project>{db996d01-ddf1-4985-a632-14bf5026439e}</Project>
+      <Name>CommonResources</Name>
     </ProjectReference>
     <ProjectReference Include="..\RandomPersonGenerator\RandomPersonGenerator.csproj">
       <Project>{392B241E-2499-4746-88A2-8BD9B964655D}</Project>
@@ -110,6 +114,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="windows.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
