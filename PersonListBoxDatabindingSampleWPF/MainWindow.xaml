@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Person Simple Databinding Sample" Height="550" Width="400">
+        Title="Person ListBox Databinding Sample" Height="550" Width="400">
 
     <Window.Resources>
         <ResourceDictionary>

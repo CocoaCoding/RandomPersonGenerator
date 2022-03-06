@@ -6,28 +6,27 @@
         xmlns:local="clr-namespace:PersonTreeViewDatabindingSampleWPF"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Person TreeView Databinding Sample" Height="450" Width="800">
+        Title="Person TreeView Databinding Sample"  Height="550" Width="400">
 
-    <!--<Window.Resources>
+    <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/PersonSimpleDatabindingSampleWPF;Resources/Styles.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/CommonResources;component/Resources/Styles.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
-    </Window.Resources>-->
-
+    </Window.Resources>
 
     <Grid>
         <TreeView ItemsSource="{Binding Path=Children}" >
             <TreeView.ItemTemplate>
                 <HierarchicalDataTemplate DataType="{x:Type local:PersonTreeViewModel}" ItemsSource="{Binding Children}">
-                    
-                    
-                    
-                    
-                    <TextBlock Text="{Binding FullName}" />
-                    
-                    
+                    <StackPanel Orientation="Horizontal" Margin="4">
+                        <Image Width="40" Height="40" Style="{StaticResource GenderImage}"/>
+                        <StackPanel Orientation="Vertical" Margin="10,0,0,0">
+                            <TextBlock Style="{StaticResource HeaderStyle}" Text="{Binding Path=FullName}"/>
+                            <TextBlock Style="{StaticResource SubHeaderStyle}" Text="{Binding Path=Born}"/>
+                        </StackPanel>
+                    </StackPanel>
                 </HierarchicalDataTemplate>
             </TreeView.ItemTemplate>
             <TreeView.ItemContainerStyle>

@@ -99,6 +99,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CommonResources\CommonResources.csproj">
+      <Project>{db996d01-ddf1-4985-a632-14bf5026439e}</Project>
+      <Name>CommonResources</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PersonListBoxDatabindingSampleWPF\PersonListBoxDatabindingSampleWPF.csproj">
       <Project>{AF765C38-5EF3-417C-90AD-EF36352684DF}</Project>
       <Name>PersonListBoxDatabindingSampleWPF</Name>
