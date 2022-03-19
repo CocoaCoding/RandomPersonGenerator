@@ -44,15 +44,15 @@ namespace Datamodel
             _maleFirstNames.AddRange(new[] { "Pete", "Ricky", "Richard", "Paul", "Ian", "Martin", "Noel", "Adam", "Don", "Dan", "Fred" });
             _maleFirstNames.AddRange(new[] { "Jack", "Tobias", "Otto", "Kurt", "Wolfgang", "Andreas", "Josef", "Donald", "Frank", "Steven", "Adrian", "James" });
             _maleFirstNames.AddRange(new[] { "Eric", "Kenny", "Patrick", "Bret" ,"Isaac","Harry","Clark", "Barry", "Harald", "Boris", "Mario", "Luigi"});
+            _maleFirstNames.AddRange(new[] {  "Roman", "Marco", "Holger", "Emil", "Edgar", "Jean" });
 
             _femaleFirstNames.AddRange(new[] { "Rose", "Billie", "Kenzie", "Jane", "Kagney", "May", "Gwen", "Mary", "Rina" });
             _femaleFirstNames.AddRange(new[] { "Linda", "Tracy", "Lena", "Katrina", "Samantha", "Suzi", "Nina", "Brooke","Carmen" });
             _femaleFirstNames.AddRange(new[] { "Haruna", "Angelina", "Virginia", "Natasha", "Veronica", "Hana", "Jessica" });
             _femaleFirstNames.AddRange(new[] { "Jill", "Sabrina", "Betty", "Anna", "Ute", "Angelika", "Natalie", "Eve", "Kelly", "Tia" });
             _femaleFirstNames.AddRange(new[] { "Allison", "Carrie", "Ivanka", "Sharon", "Mona", "Lucy", "Anny", "Pia", "Isabella", "Sara", "Yui" });
-            _femaleFirstNames.AddRange(new[] { "Pamela", "Beverly", "Madison" ,"Lana", "Nicole","Joy", "Yaprak","Mio" });
-            _femaleFirstNames.AddRange(new[] { "Tina", "Adriana","Caitlin" });
-
+            _femaleFirstNames.AddRange(new[] { "Pamela", "Beverly", "Madison" ,"Lana", "Nicole","Joy", "Yaprak","Mio", "Hannah" });
+            _femaleFirstNames.AddRange(new[] { "Tina", "Adriana","Caitlin", "Mia", "Lara", "Kirsten", "Karin", "Charlotte", "Tamsin", "Marion" });
 
             _lastNames.AddRange(new[] { "Swift", "Piper", "Steele", "Rogers", "Stark", "Hawkins", "Lee", "Kirby" });
             _lastNames.AddRange(new[] { "Cambell", "Hart", "Jordan", "Fielding", "Crispin", "Ford", "Jones" ,"Osborn", "Stane" });
@@ -62,6 +62,7 @@ namespace Datamodel
             _lastNames.AddRange(new[] { "Bogenhard", "Wayne", "Lane","Newton", "Lesch", "Fielding", "Allen" });
             _lastNames.AddRange(new[] { "Ewing", "Barns", "Knight","Miles", "Carrington", "Reynolds", "Ono" });
             _lastNames.AddRange(new[] { "Jackson", "Siegel", "Mills","Stacy", "Fischer", "Azuklu", "Pangborn" });
+            _lastNames.AddRange(new[] { "Nigri", "Johanson", "Fox","Wolf", "Fields", "Schneider" , "Hütter" });
 
             _placeOfBirth.AddRange(new[] { "Berlin", "Paris", "Tokyo", "Oslo", "New York", "Denver", "Anchorage", "Taipeh" });
             _placeOfBirth.AddRange(new[] { "Saitama", "Valencia", "Tunis", "Catania", "Kairo", "Port Elizabeth", "Hiroshima" });
@@ -69,6 +70,7 @@ namespace Datamodel
             _placeOfBirth.AddRange(new[] { "Glasgow", "Amsterdam", "Rom", "Sarajevo", "Damaskus", "Dubai", "Colombo" });
             _placeOfBirth.AddRange(new[] { "Oberhausen", "Birmingham", "Liverpool", "Lyon", "Ankara", "Seoul", "Honolulu" });
             _placeOfBirth.AddRange(new[] { "Antwerpen", "Houston", "Milano", "Hannover", "Beirut", "Bagdad", "Athens", "Tehran" });
+            _placeOfBirth.AddRange(new[] { "Yokohama", "Regensburg" ,"Kamakura", "Bristol", "Montpellier", "Riad", "Kuala Lumpur" });
 
             _minBirthday = new DateTime(1960, 1, 1);
             _maxBirthday = new DateTime(2020, 12, 31);

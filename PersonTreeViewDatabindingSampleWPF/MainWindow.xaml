@@ -17,7 +17,7 @@
     </Window.Resources>
 
     <Grid>
-        <TreeView ItemsSource="{Binding Path=Children}" >
+        <TreeView ItemsSource="{Binding Path=Children}" BorderThickness="0" >
             <TreeView.ItemTemplate>
                 <HierarchicalDataTemplate DataType="{x:Type local:PersonTreeViewModel}" ItemsSource="{Binding Children}">
                     <StackPanel Orientation="Horizontal" Margin="4">
