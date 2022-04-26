@@ -1,6 +1,8 @@
 # Random Person Generator
 A Person class for C# with the ability to automatically generate sample data.
 
+![alt text](https://github.com/hinzberg/RandomPersonGenerator/blob/master/person_generator_product.jpg "Random Person Generator")
+
 #### Introduction
 
 A person is always a good example for a class in software development. A person has properties in different types, (like name and age) and can have a list of his own type as children. 
